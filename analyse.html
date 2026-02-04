@@ -352,6 +352,17 @@ window._vwo_pc_custom = {
             <p>Selector: <code>#hover-card >> .hover-button</code></p>
             <hover-card id="hover-card"></hover-card>
         </div>
+
+        <!-- Test Case 5: ShadowDOM with Slots -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>Test Case 5: ShadowDOM - Slots Button</h3>
+            <p>Selector: <code>#slot-button >> button.slot-button</code></p>
+            <slot-button id="slot-button">
+                <span slot="slot-before-text">★</span>
+                Slots Button
+                <span slot="slot-after-text">→</span>
+            </slot-button>
+        </div>
     </div>
 
     <!-- ShadowDOM Custom Elements Script -->
@@ -548,6 +559,42 @@ window._vwo_pc_custom = {
             }
         }
         customElements.define('hover-card', HoverCard);
+
+        // Custom Element 6: Button with Slots (Single-level ShadowDOM using <slot>)
+        class SlotButton extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: inline-block;
+                        }
+                        button.slot-button {
+                            background-color: #16a34a;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 999px;
+                            cursor: pointer;
+                            font-size: 14px;
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                        }
+                        button.slot-button:hover {
+                            background-color: #15803d;
+                        }
+                    </style>
+                    <button class="slot-button">
+                        <slot name="slot-before-text"></slot>
+                        <span class="label"><slot></slot></span>
+                        <slot name="slot-after-text"></slot>
+                    </button>
+                `;
+            }
+        }
+        customElements.define('slot-button', SlotButton);
     </script>
 </body>
 
