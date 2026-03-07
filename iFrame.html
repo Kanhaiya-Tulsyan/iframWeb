@@ -65,7 +65,7 @@
 
     </style>
     <!-- Start VWO Async SmartCode -->
-<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+<!-- <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 <script type="text/javascript">
   const params = new URLSearchParams(window.location.search);
   const accId = parseInt(params.get("id"));
@@ -84,6 +84,25 @@ window._vwo_pc_custom = {
      a: 100,
      t: 100
  };	    
+</script> -->
+
+
+    <script type="text/javascript">
+  const params = new URLSearchParams(window.location.search);
+  const accId = parseInt(params.get("id"));
+  const accountId = accId || 4001225; // fallback account id
+
+  console.log("Account-Id ->", accountId);
+
+  (function () {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.referrerPolicy = "no-referrer-when-downgrade";
+    s.src = "https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/" + accountId + ".js";
+    s.id = "vwoCode";
+
+    document.head.appendChild(s);
+  })();
 </script>
 <!-- End VWO Async SmartCode -->
   </head>
