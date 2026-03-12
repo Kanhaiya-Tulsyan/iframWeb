@@ -106,19 +106,6 @@ window._vwo_pc_custom = {
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-5R8XSB3');
     </script>
-    <script>
-        $(document).ready(function () {
-            $('#revenue').on('click', function () {
-                window.VWO = window.VWO || [];
-                window.VWO.push(['track.revenueConversion', 1]);
-            })
-            $('#setReferralUrl').on('click', function () {
-                var url = new URL(window.location.href);
-                url.searchParams.set('referrer', true);
-                window.location.replace(url.toString());
-            })
-        });
-    </script>
 
 </head>
 
@@ -602,6 +589,7 @@ window._vwo_pc_custom = {
 </body>
 
 </html>
+
 
 
 
