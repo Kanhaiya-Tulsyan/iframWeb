@@ -85,23 +85,7 @@ window._vwo_pc_custom = {
      t: 100
  };	    
 </script> -->
-<script type="text/javascript">
-  const params = new URLSearchParams(window.location.search);
-  const accId = parseInt(params.get("id"));
-  const accountId = 1210227 || 4001225; // fallback account id
-
-  console.log("Account-Id ->", accountId);
-
-  (function () {
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.referrerPolicy = "no-referrer-when-downgrade";
-    s.src = "https://dev.visualwebsiteoptimizer.com/tag/" + accountId + ".js";
-    s.id = "vwoCode";
-
-    document.head.appendChild(s);
-  })();
-</script>
+<script referrerPolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/tag/1210227.js" id="vwoCode"></script>
 
     <!-- <script type="text/javascript">
   const params = new URLSearchParams(window.location.search);
