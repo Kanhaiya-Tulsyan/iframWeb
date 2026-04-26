@@ -50,10 +50,37 @@
       }
     </style>
     
-<script>
+<!-- <script>
   document.cookie = "abc=apple123; path=/";
+</script> -->
+    <script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q");
+
+    if (q === "cookie") {
+      // Set cookie
+      document.cookie = "abc=apple123; path=/";
+      console.log("Cookie set: abc=apple123");
+    }
+
+    else if (q === "local_storage") {
+      // Set localStorage
+      localStorage.setItem("abc", "apple123");
+      console.log("LocalStorage set: abc=apple123");
+    }
+
+    else if (q === "javascript_var") {
+      // Set global JS variable
+      window.abc = "apple123";
+      console.log("JS variable set: abc=apple123");
+    }
+
+    else {
+      console.log("No matching condition for q =", q);
+    }
+  })();
 </script>
-    
 <!-- <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 <script type="text/javascript" id="vwoCode">
 window._vwo_code || (function() {        
