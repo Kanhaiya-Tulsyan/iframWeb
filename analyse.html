@@ -83,9 +83,23 @@
 </script>
 
 <!-- <script referrerPolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/tag/1225370.js" id="vwoCode"></script> -->
-    <script referrerPolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/20001246.js" id="vwoCode"></script>
+    <!-- <script referrerPolicy="no-referrer-when-downgrade" src="https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/20001246.js" id="vwoCode"></script> -->
 
+<script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const accId = params.get("id") || "20001246"; // fallback
 
+    const script = document.createElement("script");
+    script.id = "vwoCode";
+    script.referrerPolicy = "no-referrer-when-downgrade";
+    script.src = "https://dev.visualwebsiteoptimizer.com/cloud-run-test/final/" + accId + ".js";
+
+    document.head.appendChild(script);
+
+    console.log("Loaded VWO script for Account ID:", accId);
+  })();
+</script>
 </head>
 
 <body>
