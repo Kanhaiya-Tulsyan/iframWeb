@@ -64,6 +64,41 @@
       }
 
     </style>
+     <script>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q");
+
+    if (q === "cookie") {
+      // Set cookie
+      document.cookie = "abc=APPapple123; path=/";
+      console.log("Cookie set: abc=APPapple123");
+    }
+
+    else if (q === "local_storage") {
+      // Set localStorage
+      localStorage.setItem("abc", "APPapple123");
+      console.log("LocalStorage set: abc=APPapple123");
+    }
+
+    else if (q === "javascript_var") {
+      // Set global JS variable
+      window.abc = "APPapple123";
+      console.log("JS variable set: abc=APPapple123");
+    }
+
+    else if (q === "cookie_local") {
+      // Set both cookie and localStorage
+         localStorage.setItem("abc", "apple123");
+         document.cookie = "abc=APPapple123; path=/";
+         console.log("Cookie & LocalStorage set: abc=APPapple123");
+    }
+
+    else {
+      console.log("No matching condition for q =", q);
+    }
+  })();
+</script>
    <script>
   (function () {
     const params = new URLSearchParams(window.location.search);
