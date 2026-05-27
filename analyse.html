@@ -55,6 +55,16 @@
 <!-- <script>
   document.cookie = "abc=apple123; path=/";
 </script> -->
+
+	<script>
+	// Add the following snippet to trigger this event
+	window.VWO = window.VWO || [];
+	VWO.event = VWO.event || function () {VWO.push(["event"].concat([].slice.call(arguments)))};
+
+	VWO.event("test");
+</script>
+
+	
  <script>
   (function () {
     const params = new URLSearchParams(window.location.search);
