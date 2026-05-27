@@ -55,13 +55,22 @@
 <!-- <script>
   document.cookie = "abc=apple123; path=/";
 </script> -->
+<script>
+	// Do not change anything in the following two lines
+	window.VWO = window.VWO || [];
+	VWO.visitor = VWO.visitor || function () {VWO.push(["visitor"].concat([].slice.call(arguments)))};
 
+	// Replace <number_value> with your actual attribute value
+	VWO.visitor({ "testattribute": <number_value> });
+</script>
+
+	
 	<script>
 	// Add the following snippet to trigger this event
-	window.VWO = window.VWO || [];
-	VWO.event = VWO.event || function () {VWO.push(["event"].concat([].slice.call(arguments)))};
+	window.Wingify = window.Wingify || [];
+	Wingify.event = Wingify.event || function () {Wingify.push(["event"].concat([].slice.call(arguments)))};
 
-	VWO.event("test");
+	Wingify.event("test");
 </script>
 
 	
