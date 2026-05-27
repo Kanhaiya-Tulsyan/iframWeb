@@ -158,6 +158,19 @@
     console.log("Loaded VWO script for Account ID:", accId);
   })();
 </script>
+
+
+<script>
+	// Do not change anything in the following two lines
+	window.VWO = window.VWO || [];
+	VWO.event = VWO.event || function () {VWO.push(["event"].concat([].slice.call(arguments)))};
+
+	// Replace the property values with your actual values
+	VWO.event("test2", {
+		"prop": 12
+	});
+</script>
+	  
   </head>
 
   <body>
