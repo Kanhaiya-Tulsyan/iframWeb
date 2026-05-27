@@ -123,14 +123,14 @@
 	VWO.visitor({ "testatrri2": 12 });
 </script>
 
-<!-- <script>
+<script>
 	// Add the following snippet to trigger this event
 	window.VWO = window.VWO || [];
 	VWO.event = VWO.event || function () {VWO.push(["event"].concat([].slice.call(arguments)))};
 
 	VWO.event("test");
 </script>
-	   -->
+	  
     <!-- <script>
   (function () {
     const params = new URLSearchParams(window.location.search);
@@ -154,7 +154,7 @@
     const script = document.createElement("script");
     script.id = "vwoCode";
     script.referrerPolicy = "no-referrer-when-downgrade";
-    script.src = "https://dev.visualwebsiteoptimizer.com/tags/" + accId + ".js";
+    script.src = "https://dev.visualwebsiteoptimizer.com/tag/" + accId + ".js";
 
     document.head.appendChild(script);
 
