@@ -65,10 +65,13 @@
 </script>
 
 	
-	<script>
+<script>
 	// Add the following snippet to trigger this event
 	window.Wingify = window.Wingify || [];
-	Wingify.event = Wingify.event || function () {Wingify.push(["event"].concat([].slice.call(arguments)))};
+
+	Wingify.event = Wingify.event || function () {
+		Wingify.push(["event"].concat([].slice.call(arguments)));
+	};
 
 	Wingify.event("test");
 </script>
