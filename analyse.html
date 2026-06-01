@@ -53,57 +53,7 @@
 	window.a = 1;
 </script>
 
-<script type="text/javascript" id="forceVariation1">
-            window.Wingify = window.Wingify || [];
-           window.Wingify.push(["setVariation", [{ e: "6", v: "2" }]]);
-   </script>
-	
-	<script type="text/javascript" id="forceVariation1">
-	window.VWO = window.VWO || [];
-	window.VWO.push(["setVariation", [{ e: "7", v: "2" }]]);
-</script>
-<!-- <script>
-  document.cookie = "abc=apple123; path=/";
-</script> -->
-<script>
-	// Do not change anything in the following two lines
-	window.VWO = window.VWO || [];
-	VWO.visitor = VWO.visitor || function () {VWO.push(["visitor"].concat([].slice.call(arguments)))};
 
-	// Replace <number_value> with your actual attribute value
-	VWO.visitor({ "testattribute": 12 });
-</script>
-<script>
-	// Do not change anything in the following two lines
-	window.Wingify = window.Wingify || [];
-
-	Wingify.visitor = Wingify.visitor || function () {
-		Wingify.push(["visitor"].concat([].slice.call(arguments)));
-	};
-
-	// Replace <number_value> with your actual attribute value
-	Wingify.visitor({ "attri2": 12 });
-</script>
-	
-<script>
-	// Add the following snippet to trigger this event
-	window.Wingify = window.Wingify || [];
-
-	Wingify.event = Wingify.event || function () {
-		Wingify.push(["event"].concat([].slice.call(arguments)));
-	};
-
-	Wingify.event("test");
-</script>
-
-
-	<script>
-	// Add the following snippet to trigger this event
-	window.VWO = window.VWO || [];
-	VWO.event = VWO.event || function () {VWO.push(["event"].concat([].slice.call(arguments)))};
-
-	VWO.event("test2");
-</script>
 	
  <script>
   (function () {
