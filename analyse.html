@@ -94,11 +94,15 @@
 <!-- Start Wingify Async SmartCode -->
 <link rel="preconnect" href="https://edge.wingify.net"/>
 <script type='text/javascript'>
+	 const params = new URLSearchParams(window.location.search);
+     const accId = parseInt(params.get("id"));
+     const accountId = accId || 981075;
+     console.log("Account-Id ->", accountId);
 window._wingify_code ||
 (function () {
 var w=window,
 d=document;
-var account_id=4001703,
+var account_id=accountId,
 version=2.2,
 settings_tolerance=2000,
 hide_element='body',
