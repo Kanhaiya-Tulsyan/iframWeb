@@ -115,9 +115,40 @@ window.Wingify.push(['activate', false, [3], true]);
 <!-- Start VWO Async V3.0 SmartCode -->
 
 <!--End VWO Async SmartCode -->
+<script id="vwoLoaderScript" class="inline-script">
+(function () {
+  const params = new URLSearchParams(window.location.search);
 
+  const accountId = params.get('id');
+  const env = (params.get('env') || 'testapp').toLowerCase();
+
+  const envPaths = {
+    prod: 'tag',
+    staging: 'tags',
+    testapp: 'cloud-run-test/final'
+  };
+
+  if (!accountId) {
+    console.warn('VWO account id missing in URL');
+    return;
+  }
+
+  if (!Object.prototype.hasOwnProperty.call(envPaths, env)) {
+    console.warn(`Invalid VWO environment: ${env}`);
+    return;
+  }
+
+  const path = envPaths[env];
+
+  const script = document.createElement('script');
+  script.src = `https://edge.wingify.net/${path}/${encodeURIComponent(accountId)}.js`;
+  script.async = true;
+
+  document.head.appendChild(script);
+})();
+</script>
 <!-- Start Wingify Async V3.0 SmartCode -->
-<link rel="preconnect" href="https://edge.wingify.net"/>
+<!-- <link rel="preconnect" href="https://edge.wingify.net"/>
 <script type="text/javascript">
 	 const params = new URLSearchParams(window.location.search);
      const accId = parseInt(params.get("id"));
@@ -132,7 +163,7 @@ window._wingify_code || (function() {
         'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important';
     /* DO NOT EDIT BELOW THIS LINE */
     var n=window,i=document;if(-1<i.URL.indexOf('__wingify_disable__')||n._wingify_code)return;var t=!1,r=i.currentScript,e={sT:settings_tolerance,hES:hide_element_style,hE:hide_element};try{e=Object.assign(e,JSON.parse(localStorage.getItem('_wingify_'+account_id+'_config')))}catch(e){}var code={script:r,nonce:r.nonce,settings_tolerance:function(){return e.sT},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':e.hE},hide_element_style:function(){return'{'+e.hES+'}'},getVersion:function(){return version},finish:function(){var e;!t&&(t=!0,e=i.getElementById('_vis_opt_path_hides'))&&e.parentNode.removeChild(e)},finished:function(){return t},addScript:function(e){var t=i.createElement('script');t.src=e,r.nonce&&t.setAttribute('nonce',r.nonce),t.fetchPriority='high',i.head.appendChild(t)},init:function(){n._settings_timer=setTimeout(function(){code.finish()},this.settings_tolerance());var e,t=this.hide_element();t&&((e=i.createElement('style')).id='_vis_opt_path_hides',r.nonce&&e.setAttribute('nonce',r.nonce),e.textContent=t+this.hide_element_style(),i.head.appendChild(e)),this.addScript('https://edge.wingify.net/cloud-run-test/final/'+account_id+'.js')}};n._wingify_code=code;code.init();})();
-</script> 
+</script>  -->
 <!--End Wingify Async SmartCode -->
 
 
